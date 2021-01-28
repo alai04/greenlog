@@ -26,7 +26,10 @@ func Pong(ctx *gin.Context) {
 // @Accept  json
 // @Produce  json
 // @Param   log     body    log.LogRec     true        "Log Record"
-// @Success 200 {string} string	"ok"
+// @Success 200 {object} httputil.HTTPSucc	"ok"
+// @Failure 400 {object} httputil.HTTPError "error code & message"
+// @Failure 404 {object} httputil.HTTPError "error code & message"
+// @Failure 500 {object} httputil.HTTPError "error code & message"
 // @Router /log [post]
 func LogPost(ctx *gin.Context) {
 	var rec log.LogRec
